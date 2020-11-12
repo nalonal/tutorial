@@ -321,15 +321,20 @@ public function run()
 }
 ```
 
-Menjalankan seeder (Single Seeder)
+### Menjalankan seeder (Single Seeder)
 ```sh
 php artisan db:seed --class=<nama_seeder>
 php artisan db:seed --class=MasterActivitySifatSeeder
 ```
-Menjalankan seeder All
+### Menjalankan seeder All
+Isi File DatabaseSeeder.php
 ```sh
 public function run()
 {
     $this->call(MasterActivitySifatSeeder::class);
 }
+```
+Jalankan Artisan
+```sh
+php artisan db:seed
 ```
