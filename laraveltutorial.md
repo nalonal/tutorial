@@ -3,6 +3,7 @@ Tutorial ini ditulis dengan maksud mendokumentasikan hasil belajar Laravel
 
 # Daftar Isi
  - [Cara Installasi](https://github.com/nalonal/tutorial/blob/main/laraveltutorial.md#installasi)
+ - [Hide .env file From Hacker](https://github.com/nalonal/tutorial/blob/main/laraveltutorial.md#hide-env-file-form-hacker)
  - [Cara Menggunakan Blade Template](https://github.com/nalonal/tutorial/blob/main/laraveltutorial.md#blading-templating)
  - [Cara Menggunakan CRUD](https://github.com/nalonal/tutorial/blob/main/laraveltutorial.md#metode-crud)
  - [Cara Menggunakan Seeder](https://github.com/nalonal/tutorial/blob/main/laraveltutorial.md#seeder-database)
