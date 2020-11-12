@@ -22,6 +22,18 @@ install key laravel
 ```sh
 php artisan key:generate
 ```
+# Hide .env File form Hacker
+create .htaccess file then fill with this
+```sh
+# Disable index view
+Options -Indexes
+# Hide a specific file
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
+```
+
 # Blading (Templating)
 Master Blade
 ```sh
