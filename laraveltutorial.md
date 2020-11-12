@@ -320,3 +320,16 @@ public function run()
     ]);
 }
 ```
+
+Menjalankan seeder (Single Seeder)
+```sh
+php artisan db:seed --class=<nama_seeder>
+php artisan db:seed --class=MasterActivitySifatSeeder
+```
+Menjalankan seeder All
+```sh
+public function run()
+{
+    $this->call(MasterActivitySifatSeeder::class);
+}
+```
