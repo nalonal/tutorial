@@ -299,3 +299,24 @@ Delete View (Lihat Index View)
     <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
 </form>
 ```
+
+# Seeder Database
+Membuat seeder
+```sh
+php artisan make:seeder <nama_seeder>
+php artisan make:seeder MasterActivitySifatSeeder
+```
+
+Melakukan setting pada seeder
+```sh
+use App\Models\User;
+.....
+public function run()
+{
+    User::create([
+        'name' => 'Hardik',
+        'email' => 'admin@gmail.com',
+        'password' => bcrypt('123456'),
+    ]);
+}
+```
