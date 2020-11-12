@@ -34,7 +34,7 @@ Options -Indexes
 </Files>
 ```
 
-# Blading (Templating)
+# Blade (Templating)
 Master Blade
 ```sh
 <!DOCTYPE html>
