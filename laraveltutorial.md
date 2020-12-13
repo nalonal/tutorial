@@ -266,9 +266,8 @@ public function store(Request $request)
 Create & Store View
 ```sh
 ...
-<form method="POST" action="{{ route('m_activitysifatpage.update', $Data_Activity_Sifat->id) }}">
+<form method="POST" action="{{ route('m_activitysifatpage.store', $Data_Activity_Sifat->id) }}">
     @csrf
-    @method('PUT')
     {{ $Data_Activity_Sifat->keterangan }}
 </form>
 ...
@@ -358,4 +357,127 @@ public function run()
 Jalankan Artisan
 ```sh
 php artisan db:seed
+```
+
+### Membuat DOMPDF
+Jalankan Composer (Pada Root Folder)
+```sh
+composer require barryvdh/laravel-dompdf
+```
+
+config/app.php
+```
+'providers' => [
+  ....
+  Barryvdh\DomPDF\ServiceProvider::class,
+],
+  
+'aliases' => [
+  ....
+  'PDF' => Barryvdh\DomPDF\Facade::class,
+]
+```
+
+Controller
+```sh
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use PDF;
+
+class Namakontroler extends Controller
+
+{
+    public function namaFungsi()
+
+    {
+        $data = ['title' => 'Welcome to belajarphp.net'];
+
+        $pdf = PDF::loadView('myPDF', $data);
+        return $pdf->download('laporan-pdf.pdf');
+    }
+}
+```
+
+Halaman Blade
+
+```sh
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hi</title>
+</head>
+<body>
+  <h1>{{ $title }}</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+</body>
+</html>
+```
+
+### Upload File Laravel
+membuat symlink
+```sh
+php artisan storage:link
+```
+
+Blade
+```sh
+<form method="POST" action="{{ route('surat.store') }}" enctype="multipart/form-data">
+  @csrf 
+</form>
+```
+
+Controller
+```sh
+use Illuminate\Support\Facades\Storage;
+.....
+$file = $request->file('file');
+$uuid = Str::uuid()->toString();
+$nama_file = $uuid.".".$file->extension();;
+$tujuan_upload = 'arsip';
+print($file->move($tujuan_upload,$nama_file));
+```
+
+
+### UUID
+composer
+```sh
+composer require ramsey/uuid
+```
+
+migration
+```sh
+Schema::create('users', function(Blueprint $table) 
+{
+    $table->string('id', 32)->primary();
+});
+```
+
+model
+```sh
+class User extends Model {
+    protected $table = 'users';
+    public $incrementing = false;
+    ....
+    public $fillable = [
+        'id',//---> ini
+        'nama'
+    ];
+
+}
+```
+
+controller
+```sh
+use Illuminate\Support\Str;
+....
+$uuid = Str::uuid()->toString();
 ```
