@@ -7,6 +7,9 @@ Tutorial ini ditulis dengan maksud mendokumentasikan hasil belajar Laravel
  - [Cara Menggunakan Blade Template](https://github.com/nalonal/tutorial/blob/main/laraveltutorial.md#blading-templating)
  - [Cara Menggunakan CRUD](https://github.com/nalonal/tutorial/blob/main/laraveltutorial.md#metode-crud)
  - [Cara Menggunakan Seeder](https://github.com/nalonal/tutorial/blob/main/laraveltutorial.md#seeder-database)
+ - [Membuat DOMPDF](https://github.com/nalonal/tutorial/blob/main/laraveltutorial.md#membuat-dompdf)
+ - [Upload File](https://github.com/nalonal/tutorial/blob/main/laraveltutorial.md#upload-file-laravel)
+ - [UUID](https://github.com/nalonal/tutorial/blob/main/laraveltutorial.md#uuid)
 
 
 # Installasi
